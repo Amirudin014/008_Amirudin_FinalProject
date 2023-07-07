@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Landing Page</title>
+    <style>
+      /* Gaya CSS untuk halaman */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      /* Gaya CSS untuk menu */
+
+      nav {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: right; /* Mengatur teks menjadi rata kanan */
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-left: 10px; /* Mengatur jarak antara menu item */
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+      }
+
+      /* Gaya CSS untuk setiap halaman */
+      .page {
+        display: none;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .page.active {
+        display: block;
+      }
+
+      /* Gaya CSS untuk desain halaman */
+      .about {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .experiences {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .education {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .skills {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .interests {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .award {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+    <script>
+      // JavaScript untuk mengaktifkan halaman saat menu diklik
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ambil semua elemen menu
+        const menuItems = document.querySelectorAll("nav ul li a");
+        // Ambil semua elemen halaman
+        const pages = document.querySelectorAll(".page");
+
+        // Tambahkan event listener untuk setiap menu item
+        menuItems.forEach(function (item) {
+          item.addEventListener("click", function () {
+            // Hapus kelas active dari semua menu item
+            menuItems.forEach(function (item) {
+              item.classList.remove("active");
+            });
+            // Tambahkan kelas active ke menu item yang diklik
+            this.classList.add("active");
+
+            // Ambil halaman yang sesuai dengan menu item yang diklik
+            const targetPage = document.querySelector(
+              this.getAttribute("href")
+            );
+            // Sembunyikan semua halaman
+            pages.forEach(function (page) {
+              page.classList.remove("active");
+            });
+            // Tampilkan halaman yang sesuai
+            targetPage.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Menu -->
+    <nav>
+      <ul>
+        <li><a href="#about" class="active">About Me</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#awards">Awards</a></li>
+      </ul>
+    </nav>
+
+    <!-- Halaman About -->
+    <div id="about" class="page active about">
+      <h1>About Me</h1>
+      <hr />
+
+      <p align="center">
+        <u
+          >Prakerja Kelas Web Programmer dengan Kode Peserta 008 atas nama
+          Amirudin</u
+        >. I graduated from UPN Veteran Jakarta's Bachelor of Mechanical
+        Engineering, I have strong analytical skills in providing solutions and
+        solving technical problems. Also always ready to quickly learn new
+        things, open to change, and have good communication skills.
+      </p>
+    </div>
+
+    <!-- Halaman Experiences -->
+    <div id="experiences" class="page experiences">
+      <h1>Experiences</h1>
+      <hr />
+      <ol>
+        <b>
+          <li align="left">Machine Operator Internship</li>
+        </b>
+        <p align="justify">
+          PT Panca Tunggal Bersatu, a car body company that provides the
+          manufacture of city transportation, ambulances, aluminum boxes, and
+          others. <br />October 2021 (1 month)
+        </p>
+        <ul>
+          <li align="left">
+            Analyze constraints and solve problems in production flow.
+          </li>
+          <li align="left">
+            Collaborate with engineering and maintenance departments in an
+            effort to increase productivity.
+          </li>
+          <li align="left">
+            Running the production process and carrying out inspections to
+            control quality.
+          </li>
+          <li align="left">
+            Complete the installation of machines for the production process and
+            ensure the equipment functions properly.
+          </li>
+        </ul>
+        <br /><br />
+
+        <b>
+          <li align="left">Maintenance Internship</li>
+        </b>
+        <p align="justify">
+          PT Elnusa Tbk is a subsidiary of Pertamina Hulu Energi which provides
+          various kinds of oil and gas drilling support services. <br />January
+          2020 (1 month)
+        </p>
+        <ul>
+          <li align="left">
+            Perform insulation installation on diesel engine exhaust.
+          </li>
+          <li align="left">Perform repairs on 3 phase electric motors.</li>
+          <li align="left">
+            Repaint periodically on the outside of the diesel engine to prevent
+            rust.
+          </li>
+          <li align="left">
+            Accompanying regular replacement of diesel engine oil and oil
+            filters by Caterpillar.
+          </li>
+        </ul>
+      </ol>
+    </div>
+
+    <!-- Halaman Education -->
+    <div id="education" class="page education">
+      <h1>Education</h1>
+      <hr />
+      <ol>
+        <b>
+          <li align="left">UPN Veteran Jakarta</li>
+        </b>
+        <br />
+        <ul>
+          <li align="left">Bachelor of Mechanical Engineering</li>
+          <li align="left">GPA: 3.58/4.0</li>
+          <li align="left">Year of Graduation: 2022</li>
+        </ul>
+        <br />
+        <br />
+        <b>
+          <li align="left">SMAN 11 Jakarta</li>
+        </b>
+        <br />
+        <ul>
+          <li align="left">Natural Sciences Major</li>
+          <li align="left">Year of Graduation: 2018</li>
+        </ul>
+      </ol>
+    </div>
+
+    <!-- Halaman Skills -->
+    <div id="skills" class="page skills">
+      <h1>Skills</h1>
+      <hr />
+      <ol>
+        <b> <li align="left">Problem Solving</li> </b
+        ><br />
+        <b> <li align="left">Creativity</li> </b
+        ><br />
+        <b>
+          <li align="left">Communication</li>
+        </b>
+      </ol>
+    </div>
+
+    <!-- Halaman Interests -->
+    <div id="interests" class="page interests">
+      <h1>Interests</h1>
+      <hr />
+      <p>
+        Saya memiliki minat yang besar dalam bidang teknologi dan inovasi. Saya
+        senang mempelajari tren terbaru di dunia teknologi dan berpartisipasi
+        dalam proyek-proyek yang berhubungan dengan pengembangan solusi digital.
+        Selain itu, saya juga tertarik pada isu-isu lingkungan dan
+        keberlanjutan.
+      </p>
+    </div>
+
+    <!-- Halaman Awards -->
+    <div id="awards" class="page award">
+      <h1>Awards</h1>
+      <hr />
+      <ol>
+        <b
+          ><li align="left">
+            Grant Recipients of Student Creativity Program Competition
+          </li></b
+        >
+        <p align="left">
+          Ministry of Education, Culture, Research and Technology <br />Award
+          Year: 2021
+        </p>
+        <br /><br />
+        <b
+          ><li align="left">
+            1st Place in Student Level National Poster Competition
+          </li></b
+        >
+        <p align="left">Gadjah Mada University <br />Award Year: 2020</p>
+      </ol>
+    </div>
+  </body>
+</html>
